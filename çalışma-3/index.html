@@ -11,14 +11,12 @@
 
 </body>
 <script>
-    let para = prompt("Paran Ne Kadar?")
-    para = Number(para);
-    if (para > 60000) {
-        alert("Sen Zenginsin")
+    let toplam = 0;
+    for (let n = 1; n <= 4; n++) {
+        let sayi = +prompt("Bir Sayı Giriniz");
+        toplam = toplam + sayi;
     }
-    else {
-        alert("Sen Fakirsin")
-    }
+    alert("Girdiğiniz Sayıların Toplamı:" + toplam);
 
 </script>
 

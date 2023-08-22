@@ -11,15 +11,11 @@
 
 </body>
 <script>
-    let para = prompt("Paran Ne Kadar?")
-    para = Number(para);
-    if (para > 60000) {
-        alert("Sen Zenginsin")
+    let t = 0
+    for (let n = 7; n <= 100; n = n + 7) {
+        t = t + n;
     }
-    else {
-        alert("Sen Fakirsin")
-    }
-
+    alert("Sonuç" + t)
 </script>
 
 </html>

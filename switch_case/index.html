@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let sayi1 = +prompt("1. Sayıyı Yazınız");
+    let sayi2 = +prompt("2. Sayıyı Yazınız");
+    let secim = prompt("Hangi İşlem Yapılacak?");
+    let sonuc = 0;
+    switch (secim) {
+        case "toplama":
+            sonuc = sayi1 + sayi2;
+            break;
+
+        case "çıkarma":
+            sonuc = sayi1 - sayi2
+            break;
+
+        case "çarpma":
+            sonuc = sayi1 * sayi2
+            break;
+
+        case "bölme":
+            sonuc = sayi1 / sayi2
+            break;
+
+        default: sonuc = "Hata"
+
+    }
+    alert("Sonuç:" + sonuc)
+</script>
+
+</html>
