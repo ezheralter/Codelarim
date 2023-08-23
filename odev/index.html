@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let yazili = prompt("Yazılı Notunuzu Yazınız");
+    yazili = Number(yazili);
+
+    let sozlu = prompt("Sözlü Notunuzu Yazınız");
+    sozlu = Number(sozlu);
+
+    let kanaat = prompt("Kanaat Notunuzu Yazınız");
+    kanaat = Number(kanaat);
+
+    let ortalama = (yazili + sozlu + kanaat) / 3;
+    ortalama = Number(ortalama);
+
+    if (ortalama > 45) {
+        alert("Geçti Ortalamanız " + ortalama)
+    }
+    else {
+        alert("Kaldı Ortalamanız " + ortalama)
+    }
+</script>
+
+</html>
