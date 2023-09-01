@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const ogrenciler = [
+        { ad: "Ahmet", soyad: "Demir", no: 122 },
+        { ad: "Fatma", soyad: "Kara", no: 54 },
+        { ad: "Veli", soyad: "Kırkdokuz", no: 50 },
+        { ad: "Musa", soyad: "Kısa", no: 88 }
+    ];
+    console.log(ogrenciler);
+    /* for (let n = 0; n <= ogrenciler.length; n++) {
+        document.write(ogrenciler[n].ad + " " + ogrenciler[n].soyad + " (no: " + ogrenciler[n].no + ")" + "<br>");
+    } */
+
+    for (let ogrenci of ogrenciler) {
+        document.write(`${ogreni.ad},${ogrenci.soyad} (${ogrenci.no})<br>`)
+    }
+</script>
+
+</html>
