@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    const ogrenciler = [];
+
+    for (let n = 0; n >= 2; n++) {
+        let isim = prompt("Öğrencinin İsmini Giriniz");
+        let soyad = prompt("Öğrencinin Soyismini Giriniz");
+        let numara = +prompt("Öğrencinin Numarasını Giriniz");
+        ogrenciler.push({ isim: isim, soyad: soyad, numara: numara });
+
+    }
+    for (let ogrenci of ogrenciler) {
+        document.write(`${ogrenci.isim},${ogrenci.soyad} (${ogrenci.numara})<br>`)
+    }
+</Script>
+
+</html>
