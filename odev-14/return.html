@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    function o(a, b) {
+        let tek = 0;
+        let cift = 0;
+        for (let n = a; n <= b; n++) {
+            if (n % 2 == 0) cift = cift + n;
+            else tek = tek + n;
+        }
+
+        return { cift: cift, tek: tek, tumu: cift + tek }
+    }
+</Script>
+
+</html>
