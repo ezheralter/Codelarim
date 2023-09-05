@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    function Katlar4(a, b) {
+        const arry = [];
+        for (let sayi = a; sayi <= b; sayi++) {
+            if (sayi % 4 === 0) {
+                arry.push(sayi);
+            }
+        }
+        return arry;
+    }
+    let a = 10;
+    let b = 30;
+    const arry = Katlar4(a, b);
+    console.log(arry);
+</Script>
+
+</html>
