@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function carpimHesapla(a, n) {
+        let carpim = 1;
+        for (let i = a; i <= n; i++) {
+            carpim *= i;
+        }
+        return carpim;
+    }
+    let a = 1;
+    let n = 5;
+    let sonuc = carpimHesapla(a, n);
+    document.write(sonuc);
+</script>
+
+</html>
