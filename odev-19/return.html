@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fibonacci(n) {
+        let f1 = 0;
+        let f2 = 1;
+        let arr = [];
+        for (let a = 0; a < n; a++) {
+            arr.push(f2);
+            let f = f2;
+            f2 = f1 + f2;
+            f1 = f;
+        }
+        return arr;
+    }
+    document.write(fibonacci(10));
+</script>
+
+</html>
