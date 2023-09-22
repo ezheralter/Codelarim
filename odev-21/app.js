@@ -30,5 +30,5 @@ const kediAtalari = [
         ]
     }
 ];
-
+//gerçek bilgilerden yapılmıştır (yıl 2023)
 console.log(kediAtalari);
