@@ -1,8 +1,9 @@
 const bilgiler = [
-   "Ahmet Demir Öğrenci",
-   "Musa Kara Mühendis",
-   "Fatma Kısa Öğretmen",
-   "Veli Uzun İşçi"];
+   { ad: "Ahmet", soyad: "Demir", meslek: "Öğrenci" },
+   { ad: "Musa", soyad: "Kara", meslek: "Mühendis" },
+   { ad: "Fatma", soyad: "Kısa", meslek: "Öğretmen" },
+   { ad: "Veli", soyad: "Uzun", meslek: "İşçi" }
+];
 
 for (let n = 0; n < 4; n++) {
    const boks = document.createElement("div");
