@@ -17,3 +17,5 @@ dugme2.onclick = function () {
     dugme1.style.backgroundColor = "red";
     dugme2.style.backgroundColor = "green";
 }
+
+//Fira Code Nerd Font / Icons VE piskel
