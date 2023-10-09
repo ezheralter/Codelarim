@@ -7,7 +7,7 @@ function elmYap(tip, html, cls, hedef = document.body) {
     return elm;
 }
 
-elmYap("span", "Ad Soyad ", "etiket");
+const adsoyad = elmYap("span", "Ad Soyad ", "etiket");
 const txtAdSoyad = elmYap("input",);
 elmYap("br");
 elmYap("span", "Sınıf ").className = "etiket";
@@ -19,8 +19,15 @@ const txtNo = elmYap("input");
 const btnEkle = elmYap("button", "Ekle");
 
 btnEkle.onclick = function () {
-    if (txtAdSoyad.value != "") {
-        elmYap("div", txtAdSoyad.value + " " + txtSinif.value + " " + txtNo.value, "satir", liste);
+    if (txtAdSoyad.value != "" && txtSinif.value != "" && txtNo.value != "") {
+        var ogrenci = elmYap("div", txtAdSoyad.value + " " + txtSinif.value + " " + txtNo.value, "satir", liste);
+        var btnSil = elmYap("button", "Sil", "btnsil", ogrenci);
+        btnSil.onclick = function () {
+            ogrenci.remove();
+        }
+    }
+    else {
+        alert("Bütün alanları Doldurunuz");
     }
     txtAdSoyad.value = "";
     txtSinif.value = "";
