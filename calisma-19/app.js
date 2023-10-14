@@ -12,20 +12,21 @@ const nene = document.createElement("div");
 nene.style.width = "10px";
 document.body.append(nene);
 
-let soru = prompt("Hangi Renk Olsun?(ingilizce yazınız)");
+//let soru = prompt("Hangi Renk Olsun?(ingilizce yazınız)");
+let renkler = ["white", "gray", "black", "yellow", "orange", "red", "lightblue", "blue", "lightgreen", "green"];
 
 for (let y = 0; y < 100; y++) {
     nane[y] = [];
     for (let x = 0; x < 200; x++) {
-        const bulamadim = elmYap("span", "", "kutu");
+        let bulamadim = elmYap("span", "", "kutu");
         bulamadim.style.left = x * 50 + "px";
         bulamadim.style.top = y * 50 + "px";
         nene.append(bulamadim);
         nane[y][x] = bulamadim;
-        for (let zmn = 1; zmn == 1; zmn++) {
-            bulamadim.onclick = function () {
-                bulamadim.style.backgroundColor = soru;
-            }
+        bulamadim.renk = 0;
+        bulamadim.onclick = function () {
+            bulamadim.renk = (bulamadim.renk + 1) % 10;
+            bulamadim.style.backgroundColor = renkler[bulamadim.renk];
         }
 
     }
