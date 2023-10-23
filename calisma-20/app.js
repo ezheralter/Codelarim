@@ -7,8 +7,8 @@ let secilen = "black";
 document.body.style.display = "flex";
 document.body.style.justifyContent = "flex";
 
-cizimAlan.style.width = "643px";
-cizimAlan.style.height = "643px";
+cizimAlan.style.width = "802px";
+cizimAlan.style.height = "802px";
 
 cizimAlan.style.border = "solid 4px";
 cizimAlan.style.position = "relative";
@@ -21,7 +21,7 @@ renkPalet.style.position = "relative";
 document.body.append(cizimAlan);
 document.body.append(renkPalet);
 
-let r = 0;
+let c = 0;
 for (let y = 0; y < 6; y++) {
     for (let x = 0; x < 2; x++) {
         let renk = document.createElement("div");
@@ -31,7 +31,7 @@ for (let y = 0; y < 6; y++) {
         renk.style.border = "solid 1px";
         renk.style.top = (y * 40) + "px";
         renk.style.left = (x * 40) + "px";
-        renk.style.backgroundColor = renkler[r++];
+        renk.style.backgroundColor = renkler[c++];
         renk.onclick = function () {
             secilen = renk.style.backgroundColor;
         }
@@ -39,8 +39,8 @@ for (let y = 0; y < 6; y++) {
     }
 }
 
-for (let y = 0; y < 32; y++) {
-    for (let x = 0; x < 32; x++) {
+for (let y = 0; y < 40; y++) {
+    for (let x = 0; x < 40; x++) {
         let piksel = document.createElement("div");
         piksel.style.width = "20px";
         piksel.style.height = "20px";
