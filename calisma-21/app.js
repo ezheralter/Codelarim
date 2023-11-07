@@ -31,6 +31,8 @@ const hayvanlar = [
     new Hayvan("İnek", "Benek", 20, "Ot", "MÖÖÖÖÖÖ")
 ];
 
+hayvanlar.push(new Hayvan("Metehan", "Alter", 40));
+
 for (hayvan of hayvanlar) {
     console.log(hayvan.ad);
 }
