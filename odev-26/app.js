@@ -16,6 +16,13 @@ class Hayvan {
     konus() {
         document.write(this.soyledigi);
     }
+
+    ye(yenen) {
+        if (this.turu == "Kedi" && yenen.turu == "Balık")
+            document.write("Balık yedim");
+        else
+            document.write("Iyy bunu yemem. Bu bir " + yenen.turu);
+    }
 }
 
 const hayvanlar = [
@@ -32,9 +39,13 @@ const hayvanlar = [
 ];
 
 for (hayvan of hayvanlar) {
-    console.log(hayvan.ad);
+    console.log(hayvan.adi);
 }
 
 console.log(hayvanlar);
 
 hayvanlar[0].konus();
+
+const pamuk = new Hayvan("Kedi", "Pamuk", 2, "Balık", "Meoow");
+const balik = new Hayvan("Balık", "Baluk", 1, "Solucan", "?");
+pamuk.ye(balik);
