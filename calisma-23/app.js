@@ -102,7 +102,7 @@ dusmanlar.push(new Turuncgil(12, 200));
 dusmanlar.push(new Yesillik(160, 150));
 dusmanlar.push(new Yesillik(170, 200));
 
-const anakarakter = new AnaKarakter(100, 100);
+const anakarakter = new AnaKarakter(40, 100);
 anakarakter.hareket();
 
 for (let a = 0; a < 5; a++) {
@@ -112,8 +112,19 @@ for (let a = 0; a < 8; a++) {
     dusmanlar.push(new Turuncgil(50 + a * 50, a * 30));
 }
 
+
+
 setInterval(() => {
-    for (yaratik of dusmanlar) {
-        yaratik.hareket();
+    for (dusman of dusmanlar) {
+        dusman.hareket();
+        if (
+            dusman.x < anakarakter.x + 20 &&
+            dusman.x + 20 > anakarakter.x &&
+            dusman.y < anakarakter.y + 20 &&
+            dusman.y + 20 > anakarakter.y
+        ) {
+            alert("Game over!");
+            break;
+        }
     }
 }, 10);
