@@ -1,13 +1,30 @@
 const W = 400;
 const H = 400;
 
-const Alan = document.createElement("div");
+const alan = document.createElement("div");
 
-Alan.style.width = "408px";
-Alan.style.height = "408px";
-Alan.style.border = "solid 4px";
+alan.style.width = "408px";
+alan.style.height = "408px";
+alan.style.border = "solid 4px";
 
-document.body.append(Alan);
+document.body.append(alan);
+
+class KirmiziKare {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.govde = document.createElement("div");
+        this.govde.style.width = "20px";
+        this.govde.style.height = "20px";
+        this.govde.style.border = "2px solid red";
+        this.govde.style.position = "absolute";
+        this.govde.style.left = x + "px";
+        this.govde.style.top = y + "px";
+        document.body.append(this.govde);
+    }
+}
+
+const kirmiziKare = new KirmiziKare(200, 200);
 
 class Dusmanlar {
     tur = "";
@@ -112,7 +129,17 @@ for (let a = 0; a < 8; a++) {
     dusmanlar.push(new Turuncgil(50 + a * 50, a * 30));
 }
 
-
+setInterval(() => {
+    if (
+        kirmiziKare.x < anakarakter.x + 20 &&
+        kirmiziKare.x + 20 > anakarakter.x &&
+        kirmiziKare.y < anakarakter.y + 20 &&
+        kirmiziKare.y + 20 > anakarakter.y
+    ) {
+        location.reload();
+        alert("Kazandınız! Yeniden Başlatmak İçin F5 e Basınız");
+    }
+}, 10);
 
 setInterval(() => {
     for (dusman of dusmanlar) {
@@ -123,8 +150,9 @@ setInterval(() => {
             dusman.y < anakarakter.y + 20 &&
             dusman.y + 20 > anakarakter.y
         ) {
-            alert("Game over!");
+            location.reload();
             break;
+
         }
     }
 }, 10);
