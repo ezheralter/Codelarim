@@ -1,6 +1,6 @@
 const W = 400;
 const H = 400;
-
+let keyMap = [];
 const alan = document.createElement("div");
 
 alan.style.width = "408px";
@@ -8,6 +8,25 @@ alan.style.height = "408px";
 alan.style.border = "solid 4px";
 
 document.body.append(alan);
+
+window.onkeydown = window.onkeyup = (e) => {
+    keyMap[e.which] = e.type == "keydown";
+}
+
+class Duvar {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.govde = document.createElement("div");
+        this.govde.style.width = "px";
+        this.govde.style.height = "20px";
+        this.govde.style.border = "2px solid black";
+        this.govde.style.position = "absolute";
+        this.govde.style.left = x + "px";
+        this.govde.style.top = y + "px";
+        document.body.append(this.govde);
+    }
+}
 
 class KirmiziKare {
     constructor(x, y) {
@@ -24,7 +43,9 @@ class KirmiziKare {
     }
 }
 
-const kirmiziKare = new KirmiziKare(200, 200);
+const kirmiziKare = new KirmiziKare(W - 20, H - 20);
+
+const duvar = new Duvar(90, 10);
 
 class Dusmanlar {
     tur = "";
@@ -87,28 +108,35 @@ class AnaKarakter extends Dusmanlar {
 
     hareket() {
         const that = this;
-        document.onkeydown = function (e) {
-            switch (e.key) {
-                case "ArrowUp":
-                    if (that.y > 0) that.y -= 5;
-                    break;
 
-                case "ArrowDown":
-                    if (that.y < H) that.y += 5;
-                    break;
+        if (keyMap[37] && that.x > 10) that.x -= 1;
+        if (keyMap[39] && that.x < W) that.x += 1;
+        if (keyMap[38] && that.y > 10) that.y -= 1;
+        if (keyMap[40] && that.y < H) that.y += 1;
 
-                case "ArrowRight":
-                    if (that.x < W) that.x += 5;
-                    break;
+        that.govde.style.left = that.x + "px";
+        that.govde.style.top = that.y + "px";
 
-                case "ArrowLeft":
-                    if (that.x > 0) that.x -= 5;
-                    break;
-            }
-
-            that.govde.style.left = that.x + "px";
-            that.govde.style.top = that.y + "px";
-        }
+        /*         document.onkeydown = function (e) {
+                    switch (e.key) {
+                        case "ArrowUp":
+                            if () that.y -= 5;
+                            break;
+        
+                        case "ArrowDown":
+                            if (that.y < H) that.y += 5;
+                            break;
+        
+                        case "ArrowRight":
+                            if (that.x < W) that.x += 5;
+                            break;
+        
+                        case "ArrowLeft":
+                            if (that.x > 0) that.x -= 5;
+                            break;
+                    }
+        
+                } */
     }
 }
 
@@ -120,7 +148,6 @@ dusmanlar.push(new Yesillik(160, 150));
 dusmanlar.push(new Yesillik(170, 200));
 
 const anakarakter = new AnaKarakter(40, 100);
-anakarakter.hareket();
 
 for (let a = 0; a < 5; a++) {
     dusmanlar.push(new Yesillik(a * 50, 200 + a * 40));
@@ -130,18 +157,8 @@ for (let a = 0; a < 8; a++) {
 }
 
 setInterval(() => {
-    if (
-        kirmiziKare.x < anakarakter.x + 20 &&
-        kirmiziKare.x + 20 > anakarakter.x &&
-        kirmiziKare.y < anakarakter.y + 20 &&
-        kirmiziKare.y + 20 > anakarakter.y
-    ) {
-        location.reload();
-        alert("Kazandınız! Yeniden Başlatmak İçin F5 e Basınız");
-    }
-}, 10);
+    anakarakter.hareket();
 
-setInterval(() => {
     for (dusman of dusmanlar) {
         dusman.hareket();
         if (
@@ -152,7 +169,25 @@ setInterval(() => {
         ) {
             location.reload();
             break;
-
         }
+    }
+
+    if (
+        duvar.x < anakarakter.x + 20 &&
+        duvar.x + 20 > anakarakter.x &&
+        duvar.y < anakarakter.y + 20 &&
+        duvar.y + 20 > anakarakter.y
+    ) {
+
+    }
+
+    if (
+        kirmiziKare.x < anakarakter.x + 20 &&
+        kirmiziKare.x + 20 > anakarakter.x &&
+        kirmiziKare.y < anakarakter.y + 20 &&
+        kirmiziKare.y + 20 > anakarakter.y
+    ) {
+        location.reload();
+        alert("Kazandınız! Yeniden Başlatmak İçin F5 e Basınız");
     }
 }, 8);
