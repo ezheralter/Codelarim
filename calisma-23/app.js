@@ -142,6 +142,19 @@ dusmanlar.push(new Yesillik(160, 150));
 dusmanlar.push(new Yesillik(170, 200));
 
 duvarlar.push(new Duvar(70, 12, 2, 100));
+duvarlar.push(new Duvar(70, 110, 50, 2));
+duvarlar.push(new Duvar(70, 150, 100, 2));
+duvarlar.push(new Duvar(370, 360, 30, 2));
+duvarlar.push(new Duvar(360, 383, 2, 30));
+duvarlar.push(new Duvar(50, 300, 70, 2));
+duvarlar.push(new Duvar(20, 330, 70, 2));
+duvarlar.push(new Duvar(190, 200, 2, 50));
+duvarlar.push(new Duvar(12, 140, 90, 2));
+duvarlar.push(new Duvar(250, 100, 2, 50));
+duvarlar.push(new Duvar(200, 300, 2, 50));
+duvarlar.push(new Duvar(190, 200, 50, 2));
+duvarlar.push(new Duvar(260, 260, 50, 2));
+duvarlar.push(new Duvar(239, 360, 2, 60));
 
 const anakarakter = new AnaKarakter(40, 100);
 anakarakter.hareket();
