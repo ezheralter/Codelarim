@@ -51,6 +51,7 @@ class Dusmanlar {
         this.govde.style.width = "20px";
         this.govde.style.height = "20px";
         this.govde.style.borderRadius = "50%";
+        this.govde.style.border = "1px solid gray";
         this.govde.style.position = "absolute";
         this.govde.style.left = x + "px";
         this.govde.style.top = y + "px";
@@ -58,6 +59,24 @@ class Dusmanlar {
         document.body.append(this.govde);
     }
 }
+
+class GicikEdici extends Dusmanlar {
+    constructor(x, y, kim) {
+        super("GıcıkEdici", "red", x, y, kim);
+        this.kim = kim;
+    }
+
+    hareket() {
+        if (this.x < this.kim.x) this.x += 0.2;
+        else this.x -= 0.2;
+        if (this.y < this.kim.y) this.y += 0.2;
+        else this.y -= 0.2;
+        this.govde.style.left = this.x + "px";
+        this.govde.style.top = this.y + "px";
+    }
+}
+
+
 
 class Yesillik extends Dusmanlar {
     constructor(x, y) {
@@ -159,6 +178,8 @@ duvarlar.push(new Duvar(239, 360, 2, 60));
 const anakarakter = new AnaKarakter(40, 100);
 anakarakter.hareket();
 
+dusmanlar.push(new GicikEdici(300, 300, anakarakter));
+
 for (let a = 0; a < 5; a++) {
     dusmanlar.push(new Yesillik(a * 50, 200 + a * 40));
 }
@@ -189,6 +210,6 @@ setInterval(() => {
         kirmiziKare.y + 20 > anakarakter.y
     ) {
         location.reload();
-        alert("Kazandınız! Yeniden Başlatmak İçin F5 e Basınız");
+        alert("Kazandınız! Yeniden Başlatmak İçin F5 e 2-3 kez Basınız");
     }
 }, 8);
