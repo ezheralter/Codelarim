@@ -76,7 +76,7 @@ class GicikEdici extends Dusmanlar {
     }
 }
 
-
+//:ı
 
 class Yesillik extends Dusmanlar {
     constructor(x, y) {
