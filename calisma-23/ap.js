@@ -43,6 +43,7 @@ class Yuvarlak {
     }
 }
 //Discord=ezher9911#1167
+
 class AnaKarakter extends Yuvarlak {
     constructor(x, y) {
         super("Hero", "black", x, y);
@@ -56,11 +57,11 @@ class AnaKarakter extends Yuvarlak {
 
         if (that.x > 10) that.x--;
         else (console.log("Lütfen Alan'da Kalınız"));
-        if (that.x < W - 2) that.x++;
+        if (that.x < W - 1) that.x++;
         else (console.log("Lütfen Alan'da Kalınız"));
         if (that.y > 10) that.y--;
         else (console.log("Lütfen Alan'da Kalınız"));
-        if (that.y < H - 2) that.y++;
+        if (that.y < H - 1) that.y++;
         else (console.log("Lütfen Alan'da Kalınız"));
 
         that.govde.style.left = that.x + "px";
